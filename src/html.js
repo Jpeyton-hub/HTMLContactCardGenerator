@@ -12,17 +12,17 @@ let htmlTemp1 =
     <header>
         <h2>Team Contact Info</h2>
     </header>
-    <main>`;
+    <main>\n`;
 
 let htmlTemp2 = 
-`</main>
+`\n</main>
  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
  <script src="./page.js"></script>
  </body>
  </html>`;
 
-function buildManagerCard(name, id, email, officeNumber) {
-    `<div class="card">
+function addManagerCard(name, id, email, officeNumber) {
+    htmlTemp1 += `\n<div class="card">
       <div class="cardhead">
         <h3>Manager</h3>
       </div>
@@ -37,8 +37,8 @@ function buildManagerCard(name, id, email, officeNumber) {
     </div>`
 };
 
-function buildInternCard(name, id, email, school) {
-    `<div class="card">
+function addInternCard(name, id, email, school) {
+    htmlTemp1 += `\n<div class="card">
       <div class="cardhead">
         <h3>Intern</h3>
       </div>
@@ -53,10 +53,11 @@ function buildInternCard(name, id, email, school) {
     </div>`
 };
 
-function buildEngineerCard(name, id, email, github) {
-    `<div class="card">
+function addEngineerCard(name, id, email, github) {
+    
+  htmlTemp1 += `\n<div class="card">
       <div class="cardhead">
-        <h3>Role</h3>
+        <h3>Engineer</h3>
       </div>
       <div class="cardbody">
         <ul class="cardinfo">
@@ -69,4 +70,8 @@ function buildEngineerCard(name, id, email, github) {
     </div>`
 };
 
-module.exports = {htmlTemp1, htmlTemp2, buildManagerCard, buildEngineerCard, buildInternCard};
+function finalHtml() {
+  return htmlTemp1 + htmlTemp2;
+};
+
+module.exports = {htmlTemp1, htmlTemp2, addManagerCard, addEngineerCard, addInternCard, finalHtml};
