@@ -8,6 +8,7 @@ const Manager = require("./lib/Manager");
 const employeeArr = [];
 
 function createManager() {
+  console.log("Let's build your team starting with the Manager!");  
   inquirer
     .prompt([
       {
